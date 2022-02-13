@@ -94,7 +94,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Data\Menu\cancel_32.png" />
+    <Resource Include="Data\Menu\floppy_disk_32.png" />
+    <Resource Include="Data\Menu\folder_open.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Data\format_text_bold.png" />
   </ItemGroup>
