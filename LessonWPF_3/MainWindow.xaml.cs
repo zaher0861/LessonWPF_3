@@ -45,7 +45,7 @@ namespace LessonWPF_3
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void BoldExecuted(object sender, RoutedEventArgs e)
         {
             if (textBox != null)
             {
@@ -53,7 +53,7 @@ namespace LessonWPF_3
             }
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void ItalicExecuted(object sender, RoutedEventArgs e)
         {
             if (textBox!= null)
             {
@@ -61,7 +61,7 @@ namespace LessonWPF_3
             }
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void UnderlineExecuted(object sender, RoutedEventArgs e)
         {
             if (textBox != null)
             {
@@ -69,7 +69,7 @@ namespace LessonWPF_3
             }
         }
 
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        private void BlackExecuted(object sender, RoutedEventArgs e)
         {
             if (textBox != null)
             {
@@ -77,7 +77,7 @@ namespace LessonWPF_3
             }
         }
 
-        private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
+        private void RedExecuted(object sender, RoutedEventArgs e)
         {
             if (textBox != null)
             {
@@ -85,7 +85,7 @@ namespace LessonWPF_3
             }
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void OpenExecuted(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*";
@@ -95,7 +95,7 @@ namespace LessonWPF_3
             }
         }
 
-        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        private void SaveExecuted(object sender, RoutedEventArgs e)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Текстовые файлы (*.txt)|*.txt|Все файлы (*.*)|*.*";
@@ -105,7 +105,7 @@ namespace LessonWPF_3
             }
         }
 
-        private void MenuItem_Click_2(object sender, RoutedEventArgs e)
+        private void ExitExecuted(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
