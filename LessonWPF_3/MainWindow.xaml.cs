@@ -109,5 +109,22 @@ namespace LessonWPF_3
         {
             Application.Current.Shutdown();
         }
+
+        private void LightStyleExecuted(object sender, RoutedEventArgs e)
+        {
+            Uri uriLight = new Uri("Light.xaml", UriKind.Relative);
+            ResourceDictionary resourceLight = Application.LoadComponent(uriLight) as ResourceDictionary;
+            Application.Current.Resources.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(resourceLight);
+            DarkMenu.IsChecked = false;
+        }
+        private void DarkStyleExecuted(object sender, RoutedEventArgs e)
+        {
+            Uri uriDark = new Uri("Dark.xaml", UriKind.Relative);
+            ResourceDictionary resourceDark = Application.LoadComponent(uriDark) as ResourceDictionary;
+            Application.Current.Resources.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(resourceDark);
+            LightMenu.IsChecked = false;
+        }
     }
 }

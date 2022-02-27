@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="ControlStyle">
+        <Setter Property="Control.Background" Value="Gray"/>
+        <Setter Property="Control.Foreground" Value="White"/>
+    </Style>
+    <Style TargetType="MenuItem" >
+        <Setter Property="Menu.Background" Value="Gray"/>
+        <Setter Property="Menu.Foreground" Value="White"/>
+    </Style>
+
+</ResourceDictionary>

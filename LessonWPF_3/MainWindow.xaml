@@ -7,11 +7,13 @@
         xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         xmlns:sys="clr-namespace:System;assembly=mscorlib" 
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Style="{DynamicResource ControlStyle}">
     <Window.CommandBindings>
         <CommandBinding Command="Open" Executed="OpenExecuted"/>
         <CommandBinding Command="Save" Executed="SaveExecuted"/>
         <CommandBinding Command="local:MyCommand.Exit" Executed="ExitExecuted"/>
+        <CommandBinding Command="local:MyCommand.DarkStyle" Executed="DarkStyleExecuted"/>
+        <CommandBinding Command="local:MyCommand.LightStyle" Executed="LightStyleExecuted"/>
     </Window.CommandBindings>
     <Grid>
         <Grid.RowDefinitions>
@@ -19,8 +21,8 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Menu>
-            <MenuItem Header="Файл">
+        <Menu Style="{DynamicResource ControlStyle}">
+            <MenuItem Header="Файл" >
                 <MenuItem Header="Открыть" Command="Open">
                     <MenuItem.Icon>
                         <Image Source="Data\Menu\folder_open.png"/>
@@ -38,34 +40,37 @@
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
+            <MenuItem Header="Настройки">
+                <MenuItem Header="Светлая тема" x:Name="LightMenu" IsCheckable="True" IsChecked="True" Command="local:MyCommand.LightStyle"/>
+                <MenuItem Header="Темная тема" x:Name="DarkMenu" IsCheckable="True" Command="local:MyCommand.DarkStyle"/>
+            </MenuItem>
         </Menu>
-        <ToolBarTray Grid.Row="1">
-            <ToolBar Margin="5" Padding="5" >
-                <ComboBox ItemsSource="{StaticResource ListFontType}" Margin="5" Padding="5" SelectedIndex="1" Width="200" SelectionChanged="ComboBox_SelectionChanged"/>
-                <ComboBox ItemsSource="{StaticResource ListFontHeight}" Margin="5" Padding="5" SelectedIndex="2" Width="50" SelectionChanged="ComboBox_SelectionChanged_1"/>
+        <ToolBarTray Grid.Row="1" Style="{DynamicResource ControlStyle}">
+            <ToolBar Margin="5" Padding="5" Style="{DynamicResource ControlStyle}">
+                <ComboBox Style="{DynamicResource ControlStyle}" ItemsSource="{StaticResource ListFontType}" Margin="5" Padding="5" SelectedIndex="1" Width="200" SelectionChanged="ComboBox_SelectionChanged"/>
+                <ComboBox Style="{DynamicResource ControlStyle}" ItemsSource="{StaticResource ListFontHeight}" Margin="5" Padding="5" SelectedIndex="2" Width="50" SelectionChanged="ComboBox_SelectionChanged_1"/>
             </ToolBar>
-            <ToolBar Margin="5" Padding="5">
-                    <Button Height="35" Width="35" Command="local:MyCommand.Bold" >
+            <ToolBar Margin="5" Padding="5" Style="{DynamicResource ControlStyle}">
+                <Button Height="35" Width="35" Command="local:MyCommand.Bold" Style="{DynamicResource ControlStyle}">
                         <Image Source="Data/format_text_bold.png"/>
                     </Button>
                 <Separator/>
-                <Button Height="35" Width="35" Command="local:MyCommand.Italic" >
+                <Button Height="35" Width="35" Command="local:MyCommand.Italic" Style="{DynamicResource ControlStyle}" >
                         <Image Source="Data/format_text_italic.png"/>
                     </Button>
                 <Separator/>
-                        <Button Height="35" Width="35" Command="local:MyCommand.Underline" >
+                <Button Height="35" Width="35" Command="local:MyCommand.Underline" Style="{DynamicResource ControlStyle}" >
                         <Image Source="Data/format_text_underline.png"/>
                     </Button>
             </ToolBar>
-            <ToolBar Margin="5" Padding="5">
+            <ToolBar Margin="5" Padding="5" Style="{DynamicResource ControlStyle}">
                 <StackPanel VerticalAlignment="Center">
-                    <RadioButton Content="Черный" IsChecked="True" Command="local:MyCommand.Black"/>
-                    <RadioButton Content="Красный" Command="local:MyCommand.Red"/>
+                    <RadioButton Content="Черный" IsChecked="True" Command="local:MyCommand.Black" Style="{DynamicResource ControlStyle}"/>
+                    <RadioButton Content="Красный" Command="local:MyCommand.Red" Style="{DynamicResource ControlStyle}"/>
                 </StackPanel>
             </ToolBar>
         </ToolBarTray>
-        <TextBox x:Name="textBox" Grid.Row="2" Margin="5,7,5,3" Padding="5" FontFamily="Calibri" FontSize="16" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" >
-            
+        <TextBox Style="{DynamicResource ControlStyle}" x:Name="textBox" Grid.Row="2" Margin="5,7,5,3" Padding="5" FontFamily="Calibri" FontSize="16" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" >
             <TextBox.CommandBindings>
                 <CommandBinding Command="local:MyCommand.Bold" Executed="BoldExecuted"/>
                 <CommandBinding Command="local:MyCommand.Italic" Executed="ItalicExecuted"/>
@@ -74,7 +79,5 @@
                 <CommandBinding Command="local:MyCommand.Red" Executed="RedExecuted"/>
             </TextBox.CommandBindings>
         </TextBox>
-
-
     </Grid>
 </Window>
