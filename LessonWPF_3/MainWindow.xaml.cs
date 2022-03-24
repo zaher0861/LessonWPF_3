@@ -27,31 +27,31 @@ namespace LessonWPF_3
             InitializeComponent();
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            string fontName = (sender as ComboBox).SelectedItem as string;
-            if (textBox != null)
-            {
-                textBox.FontFamily = new FontFamily(fontName);
-            }
-        }
+        //private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    string fontName = (sender as ComboBox).SelectedItem as string;
+        //    if (textBox != null)
+        //    {
+        //        textBox.FontFamily = new FontFamily(fontName);
+        //    }
+        //}
 
-        private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
-        {
-            string fontHeight = (sender as ComboBox).SelectedItem as string;
-            if (textBox != null)
-            {
-                textBox.FontSize = Convert.ToDouble(fontHeight);
-            }
-        }
+        //private void ComboBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        //{
+        //    string fontHeight = (sender as ComboBox).SelectedItem as string;
+        //    if (textBox != null)
+        //    {
+        //        textBox.FontSize = Convert.ToDouble(fontHeight);
+        //    }
+        //}
 
-        private void BoldExecuted(object sender, RoutedEventArgs e)
-        {
-            if (textBox != null)
-            {
-                textBox.FontWeight = FontWeights.Bold;
-            }
-        }
+        //private void BoldExecuted(object sender, RoutedEventArgs e)
+        //{
+        //    if (textBox != null)
+        //    {
+        //        textBox.FontWeight = FontWeights.Bold;
+        //    }
+        //}
 
         private void ItalicExecuted(object sender, RoutedEventArgs e)
         {

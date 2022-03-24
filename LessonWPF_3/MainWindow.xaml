@@ -47,8 +47,8 @@
         </Menu>
         <ToolBarTray Grid.Row="1" Style="{DynamicResource ControlStyle}">
             <ToolBar Margin="5" Padding="5" Style="{DynamicResource ControlStyle}">
-                <ComboBox Style="{DynamicResource ControlStyle}" ItemsSource="{StaticResource ListFontType}" Margin="5" Padding="5" SelectedIndex="1" Width="200" SelectionChanged="ComboBox_SelectionChanged"/>
-                <ComboBox Style="{DynamicResource ControlStyle}" ItemsSource="{StaticResource ListFontHeight}" Margin="5" Padding="5" SelectedIndex="2" Width="50" SelectionChanged="ComboBox_SelectionChanged_1"/>
+                <ComboBox Name="FontFamilyBinding" Style="{DynamicResource ControlStyle}" ItemsSource="{StaticResource ListFontType}" Margin="5" Padding="5" SelectedIndex="1" Width="200"/>
+                <ComboBox Name="FontHeightBinding" Style="{DynamicResource ControlStyle}" ItemsSource="{StaticResource ListFontHeight}" Margin="5" Padding="5" SelectedIndex="2" Width="50"/>
             </ToolBar>
             <ToolBar Margin="5" Padding="5" Style="{DynamicResource ControlStyle}">
                 <Button Height="35" Width="35" Command="local:MyCommand.Bold" Style="{DynamicResource ControlStyle}">
@@ -70,14 +70,21 @@
                 </StackPanel>
             </ToolBar>
         </ToolBarTray>
-        <TextBox Style="{DynamicResource ControlStyle}" x:Name="textBox" Grid.Row="2" Margin="5,7,5,3" Padding="5" FontFamily="Calibri" FontSize="16" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" >
-            <TextBox.CommandBindings>
+        <TextBox Style="{DynamicResource ControlStyle}" 
+                 x:Name="textBox" 
+                 Grid.Row="2" 
+                 Margin="5,7,5,3" 
+                 Padding="5" 
+                 FontFamily="{Binding ElementName=FontFamilyBinding, Path=SelectedItem}" 
+                 FontSize="{Binding ElementName=FontHeightBinding, Path=SelectedItem}" 
+                 TextWrapping="Wrap" 
+                 VerticalScrollBarVisibility="Auto"/>
+        <!--<TextBox.CommandBindings>
                 <CommandBinding Command="local:MyCommand.Bold" Executed="BoldExecuted"/>
                 <CommandBinding Command="local:MyCommand.Italic" Executed="ItalicExecuted"/>
                 <CommandBinding Command="local:MyCommand.Underline" Executed="UnderlineExecuted"/>
                 <CommandBinding Command="local:MyCommand.Black" Executed="BlackExecuted"/>
                 <CommandBinding Command="local:MyCommand.Red" Executed="RedExecuted"/>
-            </TextBox.CommandBindings>
-        </TextBox>
+            </TextBox.CommandBindings>-->
     </Grid>
 </Window>
